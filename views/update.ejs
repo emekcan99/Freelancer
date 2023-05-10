@@ -1,0 +1,32 @@
+<%- include('partials/_header.ejs')-%>
+<%- include('partials/_navigation.ejs')-%>
+<!-- Contact Section-->
+        <section class="page-section mt-4" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Add a project</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <form action='/<%= project._id%>?_method=PUT' method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="title" class="col-form-label">Title:</label>
+                                <input type="text" class="form-control" id="title" name="title" value="<%=project.title%>" required>
+                              </div>
+                            <!-- description input-->
+                            <div class="mb-3">
+                                <label for="description" class="col-form-label">Description:</label>
+                                <textarea class="form-control" id="description" name="description" required><%=project.description%></textarea>
+                              </div>
+                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
